@@ -4,7 +4,7 @@ import { RawNodeDatum } from "react-d3-tree/lib/types/common";
 import './LogiTree.css'
 
 interface Props {
-  data: RawNodeDatum[] | RawNodeDatum;
+  data: RawNodeDatum[];
 }
 
 export const LogiTree: React.FC<Props> = ({data}) => {

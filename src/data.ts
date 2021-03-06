@@ -1,6 +1,6 @@
 import { RawNodeDatum } from "react-d3-tree/lib/types/common";
 
-export const data: RawNodeDatum = {
+export const data: RawNodeDatum[] = [{
   name: 'CEO',
   children: [
     {
@@ -34,4 +34,4 @@ export const data: RawNodeDatum = {
       ],
     },
   ],
-};
+}];
