@@ -10,7 +10,7 @@ export const data: RawNodeDatum[] = [{
       },
       children: [
         {
-          name: 'Foreman',
+          name: 'Foreman of the Stores',
           attributes: {
             department: 'Fabrication',
           },

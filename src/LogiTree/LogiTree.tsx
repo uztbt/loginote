@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import Tree from "react-d3-tree";
 import { RawNodeDatum } from "react-d3-tree/lib/types/common";
+import { LogiNode } from "./LogiNode";
+import { getDynamicPathClass, StraightPath } from "./LogiPath";
 import './LogiTree.css'
 
 interface Props {
-  data: RawNodeDatum[];
+  nodes: RawNodeDatum[];
 }
 
-export const LogiTree: React.FC<Props> = ({data}) => {
+export const LogiTree: React.FC<Props> = ({nodes}) => {
   const [translate, setTranslate] = useState({x: 200, y: 200});
   const treeContainer = useRef<HTMLDivElement>(null);
   useEffect(()=> {
@@ -20,8 +22,11 @@ export const LogiTree: React.FC<Props> = ({data}) => {
   return (
     <div ref={treeContainer} className="tree-container">
       <Tree
-        data={data}
+        data={nodes}
         translate={translate}
+        renderCustomNodeElement={LogiNode}
+        pathClassFunc={getDynamicPathClass}
+        pathFunc={StraightPath}
          />
     </div>
   );

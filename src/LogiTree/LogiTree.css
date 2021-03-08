@@ -1,0 +1,29 @@
+.tree-container {
+  width: 100%;
+  height: 100%;
+}
+
+.html-in-node  {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.html-in-node > .text {
+  width: 95%;
+  height: 95%;
+  resize: none;
+  border: none;
+  background-color: transparent;
+}
+
+.rd3t-link.link__to-branch {
+  stroke: #f00;
+  stroke-width: 3;
+}
+
+.rd3t-link.link__to-leaf {
+  stroke: #00f;
+}

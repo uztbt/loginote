@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css'
 import { data } from './data';
-import { LogiTree } from './LogiTree';
+import { LogiTree } from './LogiTree/LogiTree';
 
 const App: React.FC = () => {
+  const [nodes, setNodes] = useState(data)
   return (
     <div id="app">
-      <LogiTree data={data}/>
+      <LogiTree nodes={nodes}/>
     </div>
   )
 }
