@@ -1,14 +1,18 @@
 import { RenderCustomNodeElementFn } from "react-d3-tree/lib/types/common";
 
 export const LogiNode: RenderCustomNodeElementFn = ({ nodeDatum, toggleNode}) => {
-  const [x, y] = [0, -30];
-  const [width, height] = [100, 30];
+  const [x, y] = [0, -50];
+  const [width, height] = [100, 100];
   return(
   <g>
+    <rect x={x} y={y} width={width} height={height} onClick={toggleNode}>
+    </rect>
     <foreignObject x={x} y={y} width={width} height={height}>
-      <form className="html-in-node">
-        <input type="text" className="text" value={nodeDatum.name} />
-      </form>
+      <div className="html-in-node">
+        <textarea className="text" rows={2}>
+          {nodeDatum.name}
+        </textarea>
+      </div>
     </foreignObject>      
   </g>
     )

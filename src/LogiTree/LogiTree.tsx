@@ -6,10 +6,10 @@ import { getDynamicPathClass, StraightPath } from "./LogiPath";
 import './LogiTree.css'
 
 interface Props {
-  nodes: RawNodeDatum[];
+  data: RawNodeDatum[];
 }
 
-export const LogiTree: React.FC<Props> = ({nodes}) => {
+export const LogiTree: React.FC<Props> = ({data}) => {
   const [translate, setTranslate] = useState({x: 200, y: 200});
   const treeContainer = useRef<HTMLDivElement>(null);
   useEffect(()=> {
@@ -22,11 +22,12 @@ export const LogiTree: React.FC<Props> = ({nodes}) => {
   return (
     <div ref={treeContainer} className="tree-container">
       <Tree
-        data={nodes}
-        translate={translate}
+        data={data}
+        // translate={translate}
         renderCustomNodeElement={LogiNode}
         pathClassFunc={getDynamicPathClass}
         pathFunc={StraightPath}
+        // nodeSize={{x: 150, y:100}}
          />
     </div>
   );
